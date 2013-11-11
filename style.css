@@ -2,6 +2,7 @@
 body {
     font-family: Georgia, serif;
     font-size: 30px;
+    background-color: #f7f7f7;
 }
 
 a {
@@ -12,9 +13,10 @@ a {
 #header, #header h1{
     text-align:center;
     font-family: 'Leckerli One', cursive;
-    font-size:2em;
+    font-size:1.7em;
     color: #555555;
     margin:0;
+    margin-bottom:-20px;
     padding:0;
 }
 
@@ -23,6 +25,21 @@ a {
     display:none;
 }
 
+#entry_form p[class^="deadline"], .entries p{
+    height: 90px;
+    background-color: white;
+    border-bottom: 2px solid #e7e7e7;
+    padding:5px;
+}
+
+#entry_form {
+    height:0;
+}
+
+#entry_form p[class^="deadline"]{
+    margin:0;
+    height:0;
+}
 .content {
     width:70%;
     margin-left:auto;
@@ -35,13 +52,19 @@ span {
     font-size:1.3em;
     color: #333333;
 }
-.delete {
+#entry_form .delete, .delete {
     font-size: 0.7em;
     font-family:sans-serif;
     color: #BBBBBB;
-    vertical-align:top;
+    vertical-align: bottom;
     text-align:right;
-    float:right;
+    position: absolute;
+    bottom:0;
+    right:5px;
+}
+
+#entry_form p[class^="deadline"], p[class^="deadline"]{
+    position:relative;
 }
 
 input{

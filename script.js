@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-    $('.deadline').each(function(i){
+    $('[class^="deadline"]').each(function(i){
         $(this).append('<div class="delete" id=link'+i+'><a href="deleteentry.php?entry='+i+'" title="Delete Entry">x</a></div>');
     });
 
@@ -38,11 +38,15 @@ $(document).ready(function() {
                                 time: time}  ,
                         success: function() {
                             var numItems = $('p').length
-                            $('#entry_form').prepend("<div id='message'></div>");
+                            var deadlinestring = "deadline"+numItems
+                            $('#entry_form').prepend("<p class='"+deadlinestring+"'></div>");
                             numItems--;
-                            $('#message').append('<div class="delete" id=link'+numItems+'><a href="deleteentry.php?entry='+numItems+'" title="Delete Entry">x</a></div>'); //TODO: Fix the delete button here
-                            $('#message').html("<p class='deadline'>"+numItems+". <span>"+subject+" - "+date+" - "+time+"</span></p>").hide().fadeIn(1500, function() {
-                            });
+                            $('#entry_form .'+deadlinestring).append('<div class="delete" id=link'+numItems+'><a href="deleteentry.php?entry='+numItems+'" title="Delete Entry">x</a></div>');
+                            $('#entry_form .'+deadlinestring).html("<span>"+subject+" - "+date+" - "+time+"</span>").animate({
+                                    'height':'90px',
+                                    'margin-bottom':30
+                                });
+                            $('#entry_form .'+deadlinestring).append('<div class="delete" id=link'+numItems+'><a href="deleteentry.php?entry='+numItems+'" title="Delete Entry">x</a></div>');
                         }
                 });
                 return false;
@@ -51,23 +55,23 @@ $(document).ready(function() {
         });
 
         $(function() {
-            $("a").click(function() {
+            $(".content").on('click', 'a', function() {
                 var entryNum = $(this).attr("href").match(/entry=([0-9]+)/)[1];
                 $.ajax({
                     type: "GET",
                     url: "deleteentry.php",
                     data: {entry : entryNum},
                     success: function(){
-                        $('#link'+entryNum).parent().animate({
-                            'opacity':0,
+                        entryNum++;
+                        $('.deadline'+entryNum).animate({
                             'margin':0,
                             'padding':0,
                             'height':0
                             }, 650, function(){
-                                $(this).remove();
+                                $(this).hide();
                             });
                         entryNum++;
-                        $("#link"+entryNum).parent().animate({
+                        $(".deadline"+entryNum).animate({
                             'margin-top':0},1);
                     }
                 });

@@ -15,7 +15,7 @@
                     // Read line by line until end of file
                     $number = 1;
                     while(!feof($f)) { 
-                        echo "<p class='deadline'>". $number .". <span>". fgets($f) . "</span></p>";
+                        echo "<p class='deadline". $number ."'> <span>". fgets($f) . "</span></p>";
                         $number++;
                     }
                     fclose($f);
