@@ -23,7 +23,7 @@
             </div>
 
               <div id="entry_form">
-                <form name="entry" action="">
+                <form name="entry" id="form" action="">
                 <fieldset>
                     <label for="subject" id="subject_label">Subject: </label>
                     <input type="text" name="subject" id="subject" size="30" value="" class="text-input" />
