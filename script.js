@@ -46,7 +46,7 @@ $(document).ready(function() {
                                     'height':'90px',
                                     'margin-bottom':30
                                 });
-                            $('#entry_form .'+deadlinestring).append('<div class="delete" id=link'+numItems+'><a href="deleteentry.php?entry='+numItems+'" title="Delete Entry">x</a></div>');
+                            $('#entry_form .'+deadlinestring).append('<div class="delete" id=link'+numItems+'><a href="deleteentry.php?entry='+numItems+'" title="Delete Entry"><img src="bin.png" alt="x" height="12" width"12"></a></div>');
                             document.getElementById("form").reset();
                         }
                 });
