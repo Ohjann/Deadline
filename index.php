@@ -3,6 +3,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="script.js"></script>
+        <title>Deadlines</title>
     </head>
     <body>
         <div id="header">

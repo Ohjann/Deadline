@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     $('[class^="deadline"]').each(function(i){
-        $(this).append('<div class="delete" id=link'+i+'><a href="deleteentry.php?entry='+i+'" title="Delete Entry">x</a></div>');
+        $(this).append('<div class="delete" id=link'+i+'><a href="deleteentry.php?entry='+i+'" title="Delete Entry"><img src="bin.png" alt="x" height="12" width"12"></a></div>');
     });
 
         /* Function for adding entry without reloading page */
