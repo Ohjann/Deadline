@@ -3,6 +3,9 @@ Deadline
 
 Simple page for adding, deleting and viewing course deadlines.
 
+Absolutely no security features in place, relies on a trust system for people not to abuse.
+
+For live example of site check out [http://ohjann.netsoc.ie](ohjann.netsoc.ie).
 
 How To Use
 -----------
